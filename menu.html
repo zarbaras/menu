@@ -144,18 +144,52 @@
 }
 .menu-row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-top: 8px;
+  gap: 12px;
+  margin-top: 15px;
 }
+
 .menu-btn {
   background: #a38c4f;
   color: #fff;
-  padding: 5px 12px;
-  border-radius: 6px;
+  padding: 8px 20px;
+  border-radius: 25px;
   text-decoration: none;
   font-size: 0.95em;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(163, 140, 79, 0.2);
+  order: 1;
+}
+
+.menu-row span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #a38c4f;
+  background: #f8f5ef;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  order: 2;
+}
+
+.menu-btn:hover {
+  background: #8a753a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(163, 140, 79, 0.3);
+}
+
+@media (max-width: 600px) {
+  .menu-row span {
+    font-size: 1.3em;
+  }
+  .menu-btn {
+    width: 90%;
+    padding: 10px 20px;
+    font-size: 1em;
+  }
 }
 .menu-btn:hover {
   background: #8a753a;
@@ -164,12 +198,35 @@
   overflow-x: auto;
 }
 
-/* Media query'leri kaldırabilirsin veya aşağıdaki gibi düzenleyebilirsin */
+/* Mobil görünüm için medya sorguları */
 @media (max-width: 900px) {
-  .menu-card { width: 30%; }
+  .menu-card { 
+    width: 45%;
+    min-width: 160px;
+    margin: 5px;
+  }
+  .menu-title {
+    font-size: 1em;
+  }
 }
 @media (max-width: 600px) {
-  .menu-card { width: 30%; }
+  .menu-card { 
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+    margin: 10px 0;
+  }
+  .menu-title {
+    font-size: 1.1em;
+  }
+  .menu-btn {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+  .menu-img {
+    max-width: 300px;
+    margin: 0 auto 10px;
+  }
 }
 </style>
 
